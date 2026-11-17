@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form onsubmit="return validate()">
+    Username:
+    <input type="text" id="username"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+function validate() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user === "" || pass === "") {
+        document.getElementById("message").innerHTML =
+        "All fields are required";
+    }
+    else if (user === "admin" && pass === "1234") {
+        document.getElementById("message").innerHTML =
+        "Login Successful";
+    }
+    else {
+        document.getElementById("message").innerHTML =
+        "Invalid Username or Password";
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html>
